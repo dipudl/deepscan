@@ -10,7 +10,9 @@ The aim of this project is to develop a tool that can automatically find bugs in
 
 ### Video for Explanation
 
-![](graphics/demo_video.mp4)
+<video width="320" height="240" controls>
+  <source src="graphics/demo_video.mp4" type="video/mp4">
+</video>
 
 ### Objectives of this Project
 
