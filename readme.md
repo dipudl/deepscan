@@ -10,7 +10,7 @@ The aim of this project is to develop a tool that can automatically find bugs in
 
 ### Video for Explanation
 
-<video width="320" height="240" controls src="graphics/demo_video.mp4"></video>
+https://github.com/dipudl/deepscan/assets/61581457/13d750e0-1f58-40e7-9876-aea3263d874e
 
 ### Objectives of this Project
 
