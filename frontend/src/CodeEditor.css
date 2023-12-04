@@ -1,0 +1,14 @@
+.code-editor {
+    background: #EFEFEF;
+    border-radius: 0.4375rem;
+    border-width: 0px;
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #202020;
+    display: block;
+    resize: vertical;
+    width: 100%;
+    box-sizing: border-box;
+}

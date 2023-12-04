@@ -1,0 +1,166 @@
+:root {
+  --color-primary: #FFFFFF;
+  --color-report: #EFEFEF;
+  --color-action: #215B90;
+  --color-secondary: #1E1E1E;
+  --color-ui-text-light: #FFFFFF;
+  --color-ui-text-dark: #1E1E1E;
+  --font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--color-primary);
+}
+
+.App-Navbar {
+  background-color: var(--color-action);
+  padding: 1.25rem 6.25rem;
+}
+
+.App-Navbar-title {
+  color: var(--color-ui-text-light);
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+.App-code-analysis-section {
+  padding: 2rem 6.5rem 2.5rem;
+  display: flex;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  justify-content: center;
+}
+
+.App-code-input-div {
+  flex-basis: 60%;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.App-code-editor-div {
+  border: 1px solid var(--color-secondary);
+}
+
+.App-code-output-div {
+  flex-basis: 40%;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.App-code-input-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: var(--color-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.App-code-output-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: var(--color-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.App-code-input-textarea {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+}
+
+.App-code-input-div textarea {
+  background: var(--color-report);
+  border-radius: 0.4375rem;
+  border-width: 0px;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #202020;
+  display: block;
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.App-code-output {
+  background: var(--color-report);
+  border-radius: 0.4375rem;
+  border-width: 0px;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: var(--color-ui-text-dark);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.App-code-input-analyze-button {
+  margin-top: 1.5rem;
+  background: var(--color-action);
+  border-radius: 5px;
+  display: block;
+  /* width: 100%; */
+  color: var(--color-ui-text-light);
+  border: none;
+  padding: 0.875rem;
+  font-size: 1.125rem;
+  font-family: var(--font-family);
+  width: 100%; /*100%;*/
+  cursor: pointer;
+}
+
+
+@media (max-width:800px)  {
+  .App-Navbar-title {
+    font-size: 1.125rem;
+    text-align: center;
+  }
+
+  .App-code-input-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .App-code-input-analyze-button {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .App-code-output-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .App-code-output {
+    font-size: 1rem;
+  }
+
+  .App-Navbar {
+    padding: 1rem 1rem;
+  }
+
+  .App-code-analysis-section {
+    flex-flow: column;
+    padding: 1.5rem 3rem 4rem;
+  }
+}
+
+@media (max-width:600px)  {
+  .App-code-analysis-section {
+    padding: 1rem 1.25rem 4rem;
+  }
+}
