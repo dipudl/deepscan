@@ -2,20 +2,24 @@
 
 This machine learning based project involves automatic name-based software bug detection during static program analysis in C language and was developed using Python language.
 
-Website interface:
+### Website interface
 
 ![Website screenshot](graphics/website.png)
 
-The aim of this project is to develop a tool that can automatically find bugs in source code through the name analysis technique. Name-based bug detection involves analyzing source code to detect potential bugs based on the names or labels used for variables, functions, and other elements in the code. This project utilizes **Abstract Syntax Tree (AST)** to generate the negative (buggy) samples automatically due to the unavailability of a large set of negative samples. The project initially collects code snippets from C Code Corpus dataset and parses the code snippets into their corresponding AST using LibClang. It then extracts the positive samples from AST, adjusts and swaps contents of positive samples to generate negative samples. Similarly, it performs data cleaning and tokenization of data using fine-tuned **CodeT5 Tokenizer** and finally the extracted dataset is fed into the **DistilBERT model** for training to identify potential bugs. Currently, DistilBERT model is used for the **detection of bugs related to swapped function arguments and wrong binary operators**. The detection of other types of name-based bugs can be easily done following the similar steps taken in developing current models. The resulting system will be able to automatically detect specific type of bugs in source code, providing a valuable tool for software developers and improving the quality of their code.
+The aim of this project is to develop a tool that can automatically find bugs in source code through the name analysis technique. Name-based bug detection involves analyzing source code to detect potential bugs based on the names or labels used for variables, functions, and other elements in the code. This project utilizes **Abstract Syntax Tree (AST)** to generate the negative (buggy) samples automatically due to the unavailability of a large set of negative samples.
 
 ### Video for Explanation
 
 https://github.com/dipudl/deepscan/assets/61581457/13d750e0-1f58-40e7-9876-aea3263d874e
 
+The project initially collects code snippets from C Code Corpus dataset and parses the code snippets into their corresponding AST using LibClang. It then extracts the positive samples from AST, adjusts and swaps contents of positive samples to generate negative samples. Similarly, it performs data cleaning and tokenization of data using fine-tuned **CodeT5 Tokenizer** and finally the extracted dataset is fed into the **DistilBERT model** for training to identify potential bugs. Currently, DistilBERT model is used for the **detection of bugs related to swapped function arguments and wrong binary operators**. The detection of other types of name-based bugs can be easily done following the similar steps taken in developing current models. The resulting system will be able to automatically detect specific type of bugs in source code, providing a valuable tool for software developers and improving the quality of their code.
+
 ### Objectives of this Project
 
 - To create suitable training data consisting of correct and buggy code from a corpus of source code written in the C-programming language.
 - To train and evaluate a transformer model capable of name-related bug detection during static code analysis.
+
+---
 
 ## Getting Started
 
