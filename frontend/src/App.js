@@ -48,10 +48,11 @@ function App() {
         },
       })
       .then((response) => {
-        console.log(response.data.replace(/'/ig,'"'));
-        const result = JSON.parse(response.data.replace(/'/ig,'"')).analysis;
+        const result = response.data.analysis
 
-        if(result["function_args_swap_bug"].length === 0 && result["wrong_binary_operator_bug"].length === 0) {
+        if(result["function_args_swap_bug"].length === 0
+        && result["wrong_binary_operator_bug"].length === 0
+        && result["function_args_swap_bug"].length === 0) {
           setEmptyResult(true);
         } else {
           setEmptyResult(false);
@@ -109,15 +110,37 @@ function App() {
             <div className="App-code-output-text">
               {!emptyResult
               ? Object.keys(output).length !== 0 && <>
-                <ul>{output["function_args_swap_bug"].map((e, index) =>
-                  <li key={index}>{`${e.function_name}: ${(e.probability * 100).toFixed(2)}% ${e.label === 1? "buggy": "correct"} [line ${e.start_line}, cloumn ${e.start_column} to line ${e.end_line}, column ${e.end_column}]`}</li>
-                )}</ul>
+                {
+                  output["function_args_swap_bug"].length !== 0 &&
+                  <>
+                    <p className="App-bug-title">Function args swapped bug:</p>
+                    <ul>{output["function_args_swap_bug"].map((e, index) =>
+                      <li key={index}>{`${e.function_name}: ${(e.probability * 100).toFixed(2)}% ${e.label === 1? "buggy": "correct"} [line ${e.start_line}, cloumn ${e.start_column} to line ${e.end_line}, column ${e.end_column}]`}</li>
+                    )}</ul>
+                  </>
+                }
 
-                {output["function_args_swap_bug"].length !==0 && output["wrong_binary_operator_bug"].length !== 0 && <hr/>}
+                {/* {output["function_args_swap_bug"].length !== 0 && output["wrong_binary_operator_bug"].length !== 0 && <hr/>} */}
+                {
+                  output["wrong_binary_operator_bug"].length !== 0 &&
+                  <>
+                    <p className="App-bug-title">Wrong binary operator bug:</p>
+                    <ul>{output["wrong_binary_operator_bug"].map((e, index) =>
+                      <li key={index}>{`${e.operator} : ${(e.probability * 100).toFixed(2)}% ${e.label === 1? "buggy": "correct"} [line ${e.start_line}, cloumn ${e.start_column} to line ${e.end_line}, column ${e.end_column}]`}</li>
+                    )}</ul>
+                  </>
+                }
 
-                <ul>{output["wrong_binary_operator_bug"].map((e, index) =>
-                  <li key={index}>{`${e.operator} : ${(e.probability * 100).toFixed(2)}% ${e.label === 1? "buggy": "correct"} [line ${e.start_line}, cloumn ${e.start_column} to line ${e.end_line}, column ${e.end_column}]`}</li>
-                )}</ul>
+                {/* {output["wrong_binary_operator_bug"].length !== 0 && output["operator_precedence_bug"].length !== 0 && <hr/>} */}
+                {
+                  output["operator_precedence_bug"].length !== 0 &&
+                  <>
+                    <p className="App-bug-title">Operator precedence bug:</p>
+                    <ul>{output["operator_precedence_bug"].map((e, index) =>
+                      <li key={index}>{`${e.expression} : ${(e.probability * 100).toFixed(2)}% ${e.label === 1? "buggy": "correct"} [line ${e.start_line}, cloumn ${e.start_column} to line ${e.end_line}, column ${e.end_column}]`}</li>
+                    )}</ul>
+                  </>
+                }
               </>
               : "No bugs found!"}
             </div>

@@ -99,7 +99,7 @@ body {
   border-width: 0px;
   border: none;
   outline: none;
-  padding: 1rem;
+  padding: 1.25rem 1rem;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 1.125rem;
@@ -121,6 +121,10 @@ body {
   font-family: var(--font-family);
   width: 100%; /*100%;*/
   cursor: pointer;
+}
+
+.App-bug-title {
+    margin: 0 0.5rem;
 }
 
 
